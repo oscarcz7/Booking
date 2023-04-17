@@ -12,7 +12,7 @@
 
         <h3>Menu</h3>
         <div class="menu">
-            <RouterLink to="/hotels" class="button">
+            <RouterLink to="/" class="button">
                 <span class="material-icons">house</span>
                 <span class="text">Hotels</span>
             </RouterLink>
