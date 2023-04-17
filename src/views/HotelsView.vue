@@ -21,7 +21,7 @@
           </div>
           <div class="btns">
             <button type="submit">Search</button>
-            <button @click="() => resetSearch()">Clean Search</button>
+            <!-- <button @click="() => resetSearch()">Clean Search</button> -->
           </div>
         </form>
       </div>
