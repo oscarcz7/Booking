@@ -4,12 +4,14 @@
 
 [Booking Site](https://booking-oecz.netlify.app)
 
-## Description
+## Description and Project Bases
 
-# Hotels information DB managed with Firestore
-# Store managed with Pinia ⭐️
-# Prototype with Html and SCSS
-# Template project base Vue 3 in Vite
+Booking application to search the affordable option filter by a Entry date, Departure Date and Customer Type.
+
+1. Hotels information DB managed with Firestore
+2. Store managed with Pinia ⭐️
+3. Prototype with Html and SCSS
+4. Template project base Vue 3 in Vite
 
 ## Customize configuration
 
