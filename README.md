@@ -1,10 +1,15 @@
 # booking.oecz
 
-This template should help get you started developing with Vue 3 in Vite.
+## Visit Live site deployed in Netlify
 
-## Recommended IDE Setup
+[Booking Site](https://booking-oecz.netlify.app)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Description
+
+# Hotels information DB managed with Firestore
+# Store managed with Pinia ⭐️
+# Prototype with Html and SCSS
+# Template project base Vue 3 in Vite
 
 ## Customize configuration
 
