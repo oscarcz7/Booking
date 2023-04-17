@@ -2,24 +2,27 @@
   <main>
     <div class="container">
       <div class="booking-form">
-        <h1 class="title">Please fill the blanks to search the best options for you!</h1>
+        <h1 class="title">Please fill the blanks to search the best hotel for you!</h1>
         <form @submit.prevent="bookingHotels">
           <div>
             <label>Entry Date</label>
-            <input type="date" v-model="entryDate" />
+            <input type="date" v-model="entryDate" required />
           </div>
           <div>
             <label>Departure Date</label>
-            <input type="date" v-model="departureDate" />
+            <input type="date" v-model="departureDate" required />
           </div>
           <div>
             <label>Customer Type</label>
-            <select name="Customer Type" id="customer" v-model="customerType">
+            <select name="Customer Type" id="customer" v-model="customerType" required>
               <option value="rwc">Reward Customer</option>
               <option value="rc">Regular Customer</option>
             </select>
           </div>
-          <button type="submit">Search</button>
+          <div class="btns">
+            <button type="submit">Search</button>
+            <button @click="() => resetSearch()">Clean Search</button>
+          </div>
         </form>
       </div>
       <hr />
@@ -47,26 +50,32 @@ export default {
       entryDate: '',
       departureDate: '',
       customerType: '',
-      result: null
+      result: false
     }
   },
 
   methods: {
     ...mapActions(useDatabaseStore, ['bestPrice']),
     async bookingHotels() {
-      const { entryDate, departureDate } = this
-      // const databaseStore = useDatabaseStore()
+      const { entryDate, departureDate, customerType } = this
+
       let result = null
+      if (entryDate.isNullOrEmpty() || departureDate.isNullOrEmpty || customerType.isNullOrEmpty){
+        window.alert('Please fill all the information!')
+      }
       if (moment(entryDate) > moment(departureDate)) {
         window.alert('Dates are not correct! Please try again')
       } else {
         result = countWeekdaysAndWeekends(moment(entryDate), moment(departureDate))
       }
-      this.bestPrice(result.weekdays, result.weekends, this.customerType)
-      this.result = this.totals
-      // databaseStore.$reset();
+      this.bestPrice(result.weekdays, result.weekends, customerType)
+      this.result = true
+    },
+    resetSearch() {
+      window.location.reload();
     }
   },
+
   computed: {
     totals() {
       return useDatabaseStore().totals
@@ -147,12 +156,21 @@ form {
   margin-top: 20px;
 }
 
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btns button {
+  margin-right: 10px;
+}
+
 .container {
   // width: 1200px !important;
   padding: 0 !important;
   margin-right: auto;
   margin-left: auto;
-  height: 100vh;
+  // height: 100vh;
 
   @media screen and (min-width: 992px) and (max-width: 2080px) {
     // max-width: 1279px !important;

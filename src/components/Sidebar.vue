@@ -36,20 +36,18 @@ const ToggleMenu = () => {
 }
 </script>
 
-
+src/stores/hotels.js
 <style lang="scss" scoped>
 aside {
     display: flex;
     flex-direction: column;
     background-color: hsla(160, 100%, 37%, 0.2);
     color: var(--light);
-
     width: calc(2rem + 32px);
     overflow: hidden;
-    // min-height: 100%;
-    height: 100vh;
+    // height: 100%;
     padding: 1rem;
-
+    position: initial;
     transition: 0.2s ease-in-out;
 
     .flex {
