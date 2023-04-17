@@ -9,6 +9,7 @@ databasesStore.getHotels()
 
 <template>
   <main>
+    {{ databasesStore.documents }}
     <div class="container">
       <p class="container-title">Luxury Miami Hotels!</p>
       <Button />

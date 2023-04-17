@@ -8,12 +8,12 @@
                     <span class="material-icons">star</span>
                 </div>
             </div>
-            <div>
-                <p>Entry Date: {{ entryDate }}</p>
-                <p>Departue Date: {{ departureDate }}</p>
+            <div class="dates">
+                <p><span class="labels">Entry Date:</span> {{ entryDate }}</p>
+                <p><span class="labels">Departure Date:</span> {{ departureDate }}</p>
             </div>
             <div>
-                <p>Price: {{ price }}</p>
+                <p><span class="labels">Price:</span> <span class="price">${{ price }}</span></p>
             </div>
         </div>
     </div>
@@ -25,13 +25,13 @@ defineProps({
     rate: Number,
     entryDate: String,
     departureDate: String,
-    price: String
+    price: Number
 })
 </script>
 
 <style scoped lang="scss">
 .card {
-    max-width: 450px;
+    max-width: 350px;
     border: 0;
     width: 100%;
     margin-inline: auto;
@@ -40,7 +40,7 @@ defineProps({
 .container-card {
     position: relative;
     border: 2px solid transparent;
-    background: linear-gradient(71deg, #080509, #102f48, #080509);
+    background: linear-gradient(71deg, #102f48, #080509, #102f48);
     background-clip: padding-box;
     border-radius: 45px;
     padding: 40px;
@@ -87,5 +87,25 @@ defineProps({
 #icon-card {
     font-size: 50px;
     color: #3da077;
+}
+
+.dates {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.labels {
+    color: #3da077;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.price{
+    color: #535323;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.dates p {
+    margin-right: 5px;
 }
 </style>
