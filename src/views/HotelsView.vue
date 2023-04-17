@@ -58,11 +58,7 @@ export default {
     ...mapActions(useDatabaseStore, ['bestPrice']),
     async bookingHotels() {
       const { entryDate, departureDate, customerType } = this
-
       let result = null
-      if (entryDate.isNullOrEmpty() || departureDate.isNullOrEmpty || customerType.isNullOrEmpty){
-        window.alert('Please fill all the information!')
-      }
       if (moment(entryDate) > moment(departureDate)) {
         window.alert('Dates are not correct! Please try again')
       } else {

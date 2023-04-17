@@ -25,16 +25,13 @@ export const useDatabaseStore = defineStore('database', {
             ...doc.data()
           })
         })
-        console.log(this.documents)
       } catch (error) {
-        console.log(error)
       } finally {
         this.loading = false
       }
     },
 
     async bestPrice(weekDays, weekendDays, customer) {
-      console.log(weekDays, weekendDays, customer)
       if (this.totals.length !== 0) {
         return
       }
@@ -62,8 +59,6 @@ export const useDatabaseStore = defineStore('database', {
             hotels.push(obj)
           })
         } else {
-          console.log('entra')
-          console.log(arr);
           arr.map((t) => {
             obj = {
               name: t.name,
@@ -73,15 +68,13 @@ export const useDatabaseStore = defineStore('database', {
             hotels.push(obj)
           })
         }
-        console.log(hotels, 'hotels');
+
         const hotel = hotels.filter((t) => t.price === Math.min(...hotels.map((reg) => reg.price)))
         if (hotel.length === 1) {
           this.totals = hotel
         } else {
           this.totals = hotel.filter((t) => t.rate === Math.max(...hotel.map((reg) => reg.rate)))
         }
-
-        console.log(this.totals)
       } catch (error) {
       } finally {
         this.loading = false

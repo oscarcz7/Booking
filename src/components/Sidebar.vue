@@ -172,6 +172,7 @@ aside {
 
     @media (max-width: 1024px) {
         position: absolute;
+        height: 100%;
         z-index: 99;
     }
 }
