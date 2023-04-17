@@ -1,6 +1,6 @@
 <template>
     <div>
-        <RouterLink to="/" class="button">
+        <RouterLink to="/hotels" class="button">
             <span class="material-icons">search</span>
             <span class="text">Search options!</span>
         </RouterLink>
